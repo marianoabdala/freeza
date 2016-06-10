@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1461D0B412600E553AC /* AppDelegate.swift */; };
+		31CAC1491D0B412600E553AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1481D0B412600E553AC /* ViewController.swift */; };
+		31CAC14C1D0B412600E553AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14A1D0B412600E553AC /* Main.storyboard */; };
+		31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14D1D0B412600E553AC /* Assets.xcassets */; };
+		31CAC1511D0B412600E553AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14F1D0B412600E553AC /* LaunchScreen.storyboard */; };
+		31CAC15C1D0B412600E553AC /* freezaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC15B1D0B412600E553AC /* freezaTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31CAC1581D0B412600E553AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31CAC13B1D0B412600E553AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31CAC1421D0B412600E553AC;
+			remoteInfo = freeza;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		31CAC1431D0B412600E553AC /* freeza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeza.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31CAC1461D0B412600E553AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		31CAC1481D0B412600E553AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		31CAC14B1D0B412600E553AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31CAC14D1D0B412600E553AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31CAC1501D0B412600E553AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		31CAC1521D0B412600E553AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31CAC1571D0B412600E553AC /* freezaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = freezaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31CAC15B1D0B412600E553AC /* freezaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = freezaTests.swift; sourceTree = "<group>"; };
+		31CAC15D1D0B412600E553AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31CAC1401D0B412600E553AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31CAC1541D0B412600E553AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31CAC13A1D0B412600E553AC = {
+			isa = PBXGroup;
+			children = (
+				31CAC1451D0B412600E553AC /* freeza */,
+				31CAC15A1D0B412600E553AC /* freezaTests */,
+				31CAC1441D0B412600E553AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31CAC1441D0B412600E553AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31CAC1431D0B412600E553AC /* freeza.app */,
+				31CAC1571D0B412600E553AC /* freezaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31CAC1451D0B412600E553AC /* freeza */ = {
+			isa = PBXGroup;
+			children = (
+				31CAC1461D0B412600E553AC /* AppDelegate.swift */,
+				31CAC1481D0B412600E553AC /* ViewController.swift */,
+				31CAC14A1D0B412600E553AC /* Main.storyboard */,
+				31CAC14D1D0B412600E553AC /* Assets.xcassets */,
+				31CAC14F1D0B412600E553AC /* LaunchScreen.storyboard */,
+				31CAC1521D0B412600E553AC /* Info.plist */,
+			);
+			path = freeza;
+			sourceTree = "<group>";
+		};
+		31CAC15A1D0B412600E553AC /* freezaTests */ = {
+			isa = PBXGroup;
+			children = (
+				31CAC15B1D0B412600E553AC /* freezaTests.swift */,
+				31CAC15D1D0B412600E553AC /* Info.plist */,
+			);
+			path = freezaTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31CAC1421D0B412600E553AC /* freeza */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31CAC1601D0B412600E553AC /* Build configuration list for PBXNativeTarget "freeza" */;
+			buildPhases = (
+				31CAC13F1D0B412600E553AC /* Sources */,
+				31CAC1401D0B412600E553AC /* Frameworks */,
+				31CAC1411D0B412600E553AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = freeza;
+			productName = freeza;
+			productReference = 31CAC1431D0B412600E553AC /* freeza.app */;
+			productType = "com.apple.product-type.application";
+		};
+		31CAC1561D0B412600E553AC /* freezaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31CAC1631D0B412600E553AC /* Build configuration list for PBXNativeTarget "freezaTests" */;
+			buildPhases = (
+				31CAC1531D0B412600E553AC /* Sources */,
+				31CAC1541D0B412600E553AC /* Frameworks */,
+				31CAC1551D0B412600E553AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31CAC1591D0B412600E553AC /* PBXTargetDependency */,
+			);
+			name = freezaTests;
+			productName = freezaTests;
+			productReference = 31CAC1571D0B412600E553AC /* freezaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31CAC13B1D0B412600E553AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Zerously;
+				TargetAttributes = {
+					31CAC1421D0B412600E553AC = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					31CAC1561D0B412600E553AC = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 31CAC1421D0B412600E553AC;
+					};
+				};
+			};
+			buildConfigurationList = 31CAC13E1D0B412600E553AC /* Build configuration list for PBXProject "freeza" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31CAC13A1D0B412600E553AC;
+			productRefGroup = 31CAC1441D0B412600E553AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31CAC1421D0B412600E553AC /* freeza */,
+				31CAC1561D0B412600E553AC /* freezaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31CAC1411D0B412600E553AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31CAC1511D0B412600E553AC /* LaunchScreen.storyboard in Resources */,
+				31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */,
+				31CAC14C1D0B412600E553AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31CAC1551D0B412600E553AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31CAC13F1D0B412600E553AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31CAC1491D0B412600E553AC /* ViewController.swift in Sources */,
+				31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31CAC1531D0B412600E553AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31CAC15C1D0B412600E553AC /* freezaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31CAC1591D0B412600E553AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31CAC1421D0B412600E553AC /* freeza */;
+			targetProxy = 31CAC1581D0B412600E553AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		31CAC14A1D0B412600E553AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31CAC14B1D0B412600E553AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		31CAC14F1D0B412600E553AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31CAC1501D0B412600E553AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		31CAC15E1D0B412600E553AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		31CAC15F1D0B412600E553AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31CAC1611D0B412600E553AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = freeza/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zerously.freeza;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		31CAC1621D0B412600E553AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = freeza/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zerously.freeza;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		31CAC1641D0B412600E553AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = freezaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zerously.freezaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/freeza.app/freeza";
+			};
+			name = Debug;
+		};
+		31CAC1651D0B412600E553AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = freezaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zerously.freezaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/freeza.app/freeza";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31CAC13E1D0B412600E553AC /* Build configuration list for PBXProject "freeza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31CAC15E1D0B412600E553AC /* Debug */,
+				31CAC15F1D0B412600E553AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31CAC1601D0B412600E553AC /* Build configuration list for PBXNativeTarget "freeza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31CAC1611D0B412600E553AC /* Debug */,
+				31CAC1621D0B412600E553AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		31CAC1631D0B412600E553AC /* Build configuration list for PBXNativeTarget "freezaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31CAC1641D0B412600E553AC /* Debug */,
+				31CAC1651D0B412600E553AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31CAC13B1D0B412600E553AC /* Project object */;
+}
