@@ -10,6 +10,7 @@
 		31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46D71D0B419B006C42BA /* RedditClient.swift */; };
 		31AA46DA1D0B4249006C42BA /* RedditEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46D91D0B4249006C42BA /* RedditEntryModel.swift */; };
 		31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */; };
+		31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */; };
 		31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1461D0B412600E553AC /* AppDelegate.swift */; };
 		31CAC1491D0B412600E553AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CAC1481D0B412600E553AC /* ViewController.swift */; };
 		31CAC14C1D0B412600E553AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14A1D0B412600E553AC /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		31AA46D71D0B419B006C42BA /* RedditClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditClient.swift; sourceTree = "<group>"; };
 		31AA46D91D0B4249006C42BA /* RedditEntryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntryModel.swift; sourceTree = "<group>"; };
 		31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditEntryModelTest.swift; sourceTree = "<group>"; };
+		31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReditClientTests.swift; sourceTree = "<group>"; };
 		31CAC1431D0B412600E553AC /* freeza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = freeza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CAC1461D0B412600E553AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31CAC1481D0B412600E553AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				31AA46DE1D0B43A0006C42BA /* RedditEntryModelTest.swift */,
+				31AA46E01D0B4D2C006C42BA /* ReditClientTests.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31AA46DF1D0B43A0006C42BA /* RedditEntryModelTest.swift in Sources */,
+				31AA46E11D0B4D2C006C42BA /* ReditClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

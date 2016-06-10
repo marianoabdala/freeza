@@ -23,7 +23,7 @@ class RedditEntryModelTest: XCTestCase {
         
         XCTAssertEqual(entryModel.title, title)
         XCTAssertEqual(entryModel.author, author)
-        XCTAssertEqual(entryModel.creation, creation)
+        XCTAssertEqual(entryModel.creation?.timeIntervalSince1970, creation.timeIntervalSince1970)
         XCTAssertEqual(entryModel.thumbnail, thumbnail)
         XCTAssertEqual(entryModel.commentsCount, commentsCount)
     }
