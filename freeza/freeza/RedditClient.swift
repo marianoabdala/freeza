@@ -29,6 +29,12 @@ class RedditClient: Client {
         
         let dataTask = defaultSession.dataTaskWithRequest(request) { (data, response, error) in
             
+            guard let _ = response else {
+                
+                errorHandler(message: "Please check your internet connection. Server may be down.")
+                return
+            }
+            
             guard let httpResponse = response as? NSHTTPURLResponse else {
                 
                 errorHandler(message: "Invalid server response type.")
