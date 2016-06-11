@@ -21,13 +21,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-mz-4hc">
-                                            <rect key="frame" x="8" y="11" width="174" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK0-mz-4hc">
+                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZK0-mz-4hc" firstAttribute="leading" secondItem="qYg-we-90s" secondAttribute="leading" constant="8" id="CVD-cK-ibq"/>
+                                        <constraint firstItem="ZK0-mz-4hc" firstAttribute="top" secondItem="qYg-we-90s" secondAttribute="top" constant="11" id="Djh-Gs-XBF"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZK0-mz-4hc" secondAttribute="trailing" constant="8" id="EvE-70-TSd"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZK0-mz-4hc" secondAttribute="bottom" constant="11" id="ORI-w6-Hv0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="entryTitleLabel" destination="ZK0-mz-4hc" id="7dr-ch-tUe"/>

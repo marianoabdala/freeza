@@ -27,14 +27,30 @@ class TopEntriesViewController: UITableViewController {
     
     private func configureViews() {
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.activityIndicatorView)
+        func configureActivityIndicatorView() {
+            
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.activityIndicatorView)
+        }
 
-        self.errorLabel.frame = CGRectMake(0, 0, 200, 22) //TODO: Make sure this works for all device sizes.
-        let errorItem = UIBarButtonItem(customView: self.errorLabel)
-        let spaceItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        let closeItem = UIBarButtonItem(image: UIImage(named: "close-button"), style: .Plain, target: self, action: #selector(TopEntriesViewController.dismissErrorToolbar))
-
-        self.toolbarItems = [errorItem, spaceItem, closeItem]
+        func configureTableView() {
+            
+            self.tableView.rowHeight = UITableViewAutomaticDimension
+            self.tableView.estimatedRowHeight = 44.0 //TODO: Probably more.
+        }
+        
+        func configureToolbar() {
+            
+            self.errorLabel.frame = CGRectMake(0, 0, 200, 22) //TODO: Make sure this works for all device sizes.
+            let errorItem = UIBarButtonItem(customView: self.errorLabel)
+            let spaceItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+            let closeItem = UIBarButtonItem(image: UIImage(named: "close-button"), style: .Plain, target: self, action: #selector(TopEntriesViewController.dismissErrorToolbar))
+            
+            self.toolbarItems = [errorItem, spaceItem, closeItem]
+        }
+        
+        configureActivityIndicatorView()
+        configureTableView()
+        configureToolbar()
     }
     
     private func entriesReloaded() {
@@ -50,7 +66,7 @@ class TopEntriesViewController: UITableViewController {
     }
 }
 
-extension TopEntriesViewController {
+extension TopEntriesViewController { // UITableViewDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
