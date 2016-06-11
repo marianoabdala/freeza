@@ -12,7 +12,7 @@ class TopEntriesViewModelTests: XCTestCase {
         
         topEntriesViewModel.loadEntries {
             
-            XCTAssertEqual(topEntriesViewModel.entries.count, 3) //Temporary, should match paging later.
+            XCTAssertEqual(topEntriesViewModel.entries.count, 50) //Temporary, should match paging later.
             XCTAssertFalse(topEntriesViewModel.hasError)
             
             topEntriesViewModel.entries.forEach { entryViewModel in

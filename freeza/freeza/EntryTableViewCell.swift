@@ -59,5 +59,10 @@ class EntryTableViewCell: UITableViewCell {
         self.commentsCountLabel.text = entry.commentsCount
         self.ageLabel.text = entry.age
         self.entryTitleLabel.text = entry.title
+        
+        entry.loadThumbnail { 
+            
+            self.thumbnailImageView.image =  entry.thumbnail
+        }
     }
 }

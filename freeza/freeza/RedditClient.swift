@@ -12,7 +12,7 @@ class RedditClient: Client {
      */
     func fetchTop(withCompletion completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
         
-        let requestURLString = "https://www.reddit.com/top.json?limit=3"
+        let requestURLString = "https://www.reddit.com/top.json?limit=50"
         
         guard let requestURL = NSURL(string: requestURLString) else {
             

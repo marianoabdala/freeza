@@ -5,7 +5,7 @@ struct EntryModel {
     let title: String?
     let author: String?
     let creation: NSDate?
-    let thumbnail: NSURL?
+    let thumbnailURL: NSURL?
     let commentsCount: Int?
     
     init(withDictionary dictionary: [String: AnyObject]) {
@@ -33,7 +33,7 @@ struct EntryModel {
         self.title = dictionary["title"] as? String
         self.author = dictionary["author"] as? String
         self.creation = dateFromDictionary(withAttributeName: "created")
-        self.thumbnail = urlFromDictionary(withAttributeName: "thumbnail")
+        self.thumbnailURL = urlFromDictionary(withAttributeName: "thumbnail")
         self.commentsCount = dictionary["num_comments"] as? Int
     }
 }

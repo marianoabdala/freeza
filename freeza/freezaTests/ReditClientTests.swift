@@ -31,7 +31,7 @@ class ReditClientTests: XCTestCase {
                     return
                 }
                 
-                XCTAssertEqual(children.count, 3) //Temporary, should match paging later.
+                XCTAssertEqual(children.count, 50) //Temporary, should match paging later.
                 
                 expectation.fulfill()
             

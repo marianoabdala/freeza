@@ -8,14 +8,14 @@ class RedditEntryModelTest: XCTestCase {
         let title = "TEST_TITLE"
         let author = "TEST_AUTHOR"
         let creation = NSDate()
-        let thumbnail = NSURL(string: "http://mysite.com/thumb.jpg")!
+        let thumbnailURL = NSURL(string: "http://mysite.com/thumb.jpg")!
         let commentsCount = 200
         
         let dictionary: [String: AnyObject] = [
             "title": title,
             "author": author,
             "created": creation.timeIntervalSince1970,
-            "thumbnail": thumbnail.absoluteString,
+            "thumbnail": thumbnailURL.absoluteString,
             "num_comments": commentsCount
         ]
         
@@ -24,7 +24,7 @@ class RedditEntryModelTest: XCTestCase {
         XCTAssertEqual(entryModel.title, title)
         XCTAssertEqual(entryModel.author, author)
         XCTAssertEqual(entryModel.creation?.timeIntervalSince1970, creation.timeIntervalSince1970)
-        XCTAssertEqual(entryModel.thumbnail, thumbnail)
+        XCTAssertEqual(entryModel.thumbnailURL, thumbnailURL)
         XCTAssertEqual(entryModel.commentsCount, commentsCount)
     }
     
@@ -36,7 +36,7 @@ class RedditEntryModelTest: XCTestCase {
         XCTAssertNil(entryModel.title)
         XCTAssertNil(entryModel.author)
         XCTAssertNil(entryModel.creation)
-        XCTAssertNil(entryModel.thumbnail)
+        XCTAssertNil(entryModel.thumbnailURL)
         XCTAssertNil(entryModel.commentsCount)
     }
 }
