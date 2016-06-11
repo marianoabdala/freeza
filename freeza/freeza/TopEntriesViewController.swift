@@ -12,17 +12,36 @@ class TopEntriesViewController: UITableViewController {
         super.viewDidLoad()
         
         self.configureViews()
-        
-        self.activityIndicatorView.startAnimating()
-        self.viewModel.loadEntries { 
+        self.loadEntries()
+    }
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+
+        coordinator.animateAlongsideTransition({ [weak self] (context) in
             
-            self.entriesReloaded()
-        }
+            self?.configureErrorLabelFrame()
+            
+            }, completion: nil)
+    }
+
+    func retryFromErrorToolbar() {
+        
+        self.loadEntries()
+        self.dismissErrorToolbar()
     }
     
     func dismissErrorToolbar() {
         
         self.navigationController?.setToolbarHidden(true, animated: true)
+    }
+    
+    private func loadEntries() {
+
+        self.activityIndicatorView.startAnimating()
+        self.viewModel.loadEntries {
+            
+            self.entriesReloaded()
+        }
     }
     
     private func configureViews() {
@@ -39,18 +58,28 @@ class TopEntriesViewController: UITableViewController {
         }
         
         func configureToolbar() {
-            
-            self.errorLabel.frame = CGRectMake(0, 0, 200, 22) //TODO: Make sure this works for all device sizes.
+
+            self.configureErrorLabelFrame()
+
             let errorItem = UIBarButtonItem(customView: self.errorLabel)
-            let spaceItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+            let flexSpaceItem = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+            let retryItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(TopEntriesViewController.retryFromErrorToolbar))
+            let fixedSpaceItem = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
             let closeItem = UIBarButtonItem(image: UIImage(named: "close-button"), style: .Plain, target: self, action: #selector(TopEntriesViewController.dismissErrorToolbar))
             
-            self.toolbarItems = [errorItem, spaceItem, closeItem]
+            fixedSpaceItem.width = 12
+            
+            self.toolbarItems = [errorItem, flexSpaceItem, retryItem, fixedSpaceItem, closeItem]
         }
         
         configureActivityIndicatorView()
         configureTableView()
         configureToolbar()
+    }
+    
+    private func configureErrorLabelFrame() {
+        
+        self.errorLabel.frame = CGRectMake(0, 0, self.view.bounds.width - 92, 22)
     }
     
     private func entriesReloaded() {
