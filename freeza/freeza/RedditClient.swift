@@ -1,6 +1,6 @@
 import Foundation
 
-class RedditClient {
+class RedditClient: Client {
     
     private let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
 

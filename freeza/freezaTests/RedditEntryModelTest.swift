@@ -14,12 +14,12 @@ class RedditEntryModelTest: XCTestCase {
         let dictionary: [String: AnyObject] = [
             "title": title,
             "author": author,
-            "creation": creation.timeIntervalSince1970,
+            "created": creation.timeIntervalSince1970,
             "thumbnail": thumbnail.absoluteString,
             "num_comments": commentsCount
         ]
         
-        let entryModel = RedditEntryModel(withDictionary: dictionary)
+        let entryModel = EntryModel(withDictionary: dictionary)
         
         XCTAssertEqual(entryModel.title, title)
         XCTAssertEqual(entryModel.author, author)
@@ -31,7 +31,7 @@ class RedditEntryModelTest: XCTestCase {
     func testInitWithNils() {
         
         let dictionary = [String: AnyObject]()
-        let entryModel = RedditEntryModel(withDictionary: dictionary)
+        let entryModel = EntryModel(withDictionary: dictionary)
         
         XCTAssertNil(entryModel.title)
         XCTAssertNil(entryModel.author)

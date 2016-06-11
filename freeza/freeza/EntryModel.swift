@@ -1,6 +1,6 @@
 import Foundation
 
-struct RedditEntryModel {
+struct EntryModel {
 
     let title: String?
     let author: String?
@@ -32,7 +32,7 @@ struct RedditEntryModel {
         
         self.title = dictionary["title"] as? String
         self.author = dictionary["author"] as? String
-        self.creation = dateFromDictionary(withAttributeName: "creation")
+        self.creation = dateFromDictionary(withAttributeName: "created")
         self.thumbnail = urlFromDictionary(withAttributeName: "thumbnail")
         self.commentsCount = dictionary["num_comments"] as? Int
     }
