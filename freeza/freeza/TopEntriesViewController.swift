@@ -35,7 +35,7 @@ class TopEntriesViewController: UITableViewController {
         func configureTableView() {
             
             self.tableView.rowHeight = UITableViewAutomaticDimension
-            self.tableView.estimatedRowHeight = 44.0 //TODO: Probably more.
+            self.tableView.estimatedRowHeight = 110.0
         }
         
         func configureToolbar() {

@@ -37,8 +37,8 @@ class EntryViewModel {
 
         self.title = model.title ?? "Untitled"
         self.author = model.author ?? "Anonymous"
-        self.thumbnail = UIImage() //Get placeholder and fetch.
-        self.commentsCount = "\(model.commentsCount ?? 0)"
+        self.thumbnail = UIImage(named: "thumbnail-placeholder")!
+        self.commentsCount = " \(model.commentsCount ?? 0) " // Leave space for the rounded corner. I know, not cool, but does the trick.
         self.creation = model.creation
 
         if model.title == nil ||
