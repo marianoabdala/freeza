@@ -3,9 +3,11 @@ import UIKit
 
 class TopEntriesViewController: UITableViewController {
 
+    private static let showImageSegueIdentifier = "showImageSegue"
     private let viewModel = TopEntriesViewModel(withClient: RedditClient())
     private let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     private let errorLabel = UILabel()
+    private var urlToDisplay: NSURL?
 
     override func viewDidLoad() {
         
@@ -22,6 +24,19 @@ class TopEntriesViewController: UITableViewController {
             self?.configureErrorLabelFrame()
             
             }, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        super.prepareForSegue(segue, sender: sender)
+        
+        if segue.identifier == TopEntriesViewController.showImageSegueIdentifier {
+            
+            if let urlViewController = segue.destinationViewController as? URLViewController {
+                
+                urlViewController.url = self.urlToDisplay
+            }
+        }
     }
 
     func retryFromErrorToolbar() {
@@ -107,7 +122,17 @@ extension TopEntriesViewController { // UITableViewDataSource
         let entryTableViewCell = tableView.dequeueReusableCellWithIdentifier(EntryTableViewCell.cellId, forIndexPath: indexPath) as! EntryTableViewCell
         
         entryTableViewCell.entry = self.viewModel.entries[indexPath.row]
+        entryTableViewCell.delegate = self
         
         return entryTableViewCell
+    }
+}
+
+extension TopEntriesViewController: EntryTableViewCellDelegate {
+ 
+    func presentImage(withURL url: NSURL) {
+        
+        self.urlToDisplay = url
+        self.performSegueWithIdentifier(TopEntriesViewController.showImageSegueIdentifier, sender: self)
     }
 }

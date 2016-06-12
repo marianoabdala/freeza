@@ -23,6 +23,7 @@
 		31CAC14C1D0B412600E553AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14A1D0B412600E553AC /* Main.storyboard */; };
 		31CAC14E1D0B412600E553AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14D1D0B412600E553AC /* Assets.xcassets */; };
 		31CAC1511D0B412600E553AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31CAC14F1D0B412600E553AC /* LaunchScreen.storyboard */; };
+		31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		31CAC1521D0B412600E553AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31CAC1571D0B412600E553AC /* freezaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = freezaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CAC15D1D0B412600E553AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				31AA46F81D0C526D006C42BA /* TopEntriesViewController.swift */,
+				31E7F2A81D0CFAFC00C7CA70 /* URLViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				31AA46E51D0B8DA9006C42BA /* EntryViewModel.swift in Sources */,
 				31CAC1471D0B412600E553AC /* AppDelegate.swift in Sources */,
 				31AA46E91D0B9618006C42BA /* NSDate+AgeFormatter.swift in Sources */,
+				31E7F2A91D0CFAFC00C7CA70 /* URLViewController.swift in Sources */,
 				31AA46FE1D0C54A5006C42BA /* EntryTableViewCell.swift in Sources */,
 				31AA46F91D0C526D006C42BA /* TopEntriesViewController.swift in Sources */,
 				31AA46D81D0B419B006C42BA /* RedditClient.swift in Sources */,

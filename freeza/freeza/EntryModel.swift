@@ -7,6 +7,7 @@ struct EntryModel {
     let creation: NSDate?
     let thumbnailURL: NSURL?
     let commentsCount: Int?
+    let imageURL: NSURL?
     
     init(withDictionary dictionary: [String: AnyObject]) {
         
@@ -35,5 +36,15 @@ struct EntryModel {
         self.creation = dateFromDictionary(withAttributeName: "created_utc")
         self.thumbnailURL = urlFromDictionary(withAttributeName: "thumbnail")
         self.commentsCount = dictionary["num_comments"] as? Int
+        
+        if let media = dictionary["media"] as? [String: AnyObject],
+            type = media["type"] as? String where type == "i.imgur.com" {
+                
+            self.imageURL = nil
+            
+        } else {
+        
+            self.imageURL = urlFromDictionary(withAttributeName: "url")
+        }
     }
 }

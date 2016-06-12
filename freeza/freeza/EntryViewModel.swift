@@ -24,6 +24,7 @@ class EntryViewModel {
     
     var thumbnail: UIImage
     let commentsCount: String
+    let imageURL: NSURL?
     
     private let creation: NSDate?
     private let thumbnailURL: NSURL?
@@ -43,6 +44,7 @@ class EntryViewModel {
         self.thumbnail = UIImage(named: "thumbnail-placeholder")!
         self.commentsCount = " \(model.commentsCount ?? 0) " // Leave space for the rounded corner. I know, not cool, but does the trick.
         self.creation = model.creation
+        self.imageURL = model.imageURL
 
         if model.title == nil ||
             model.author == nil ||

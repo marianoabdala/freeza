@@ -1,5 +1,10 @@
 import UIKit
 
+protocol EntryTableViewCellDelegate {
+    
+    func presentImage(withURL url: NSURL)
+}
+
 class EntryTableViewCell: UITableViewCell {
 
     static let cellId = "EntryTableViewCell"
@@ -12,7 +17,9 @@ class EntryTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet private weak var thumbnailImageView: UIImageView!
+    var delegate: EntryTableViewCellDelegate?
+    
+    @IBOutlet private weak var thumbnailButton: UIButton!
     @IBOutlet private weak var authorLabel: UILabel!
     @IBOutlet private weak var commentsCountLabel: UILabel!
     @IBOutlet private weak var ageLabel: UILabel!
@@ -24,18 +31,20 @@ class EntryTableViewCell: UITableViewCell {
         self.configureViews()
     }
     
-    override func prepareForInterfaceBuilder() {
+    @IBAction func thumbnailButtonTapped(sender: AnyObject) {
         
-        super.prepareForInterfaceBuilder()
-        
-        self.configureViews()
+        if let imageURL = self.entry?.imageURL {
+            
+            self.delegate?.presentImage(withURL: imageURL)
+        }
     }
+    
     private func configureViews() {
         
         func configureThumbnailImageView() {
         
-            self.thumbnailImageView.layer.borderColor = UIColor.blackColor().CGColor
-            self.thumbnailImageView.layer.borderWidth = 1
+            self.thumbnailButton.layer.borderColor = UIColor.blackColor().CGColor
+            self.thumbnailButton.layer.borderWidth = 1
         }
         
         func configureCommentsCountLabel() {
@@ -54,15 +63,15 @@ class EntryTableViewCell: UITableViewCell {
             return
         }
         
-        self.thumbnailImageView.image = entry.thumbnail
+        self.thumbnailButton.setImage(entry.thumbnail, forState: .Normal)
         self.authorLabel.text = entry.author
         self.commentsCountLabel.text = entry.commentsCount
         self.ageLabel.text = entry.age
         self.entryTitleLabel.text = entry.title
         
-        entry.loadThumbnail { 
+        entry.loadThumbnail { [weak self] in
             
-            self.thumbnailImageView.image =  entry.thumbnail
+            self?.thumbnailButton.setImage(entry.thumbnail, forState: .Normal)
         }
     }
 }
