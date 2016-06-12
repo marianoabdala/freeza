@@ -7,6 +7,7 @@ class TopEntriesViewModel {
     var entries = [EntryViewModel]()
 
     private let client: Client
+    private var afterTag: String? = nil
 
     init(withClient client: Client) {
         
@@ -15,7 +16,7 @@ class TopEntriesViewModel {
     
     func loadEntries(withCompletion completionHandler:() -> ()) {
         
-        self.client.fetchTop(withCompletion: { [weak self] responseDictionary in
+        self.client.fetchTop(after: self.afterTag, completionHandler: { [weak self] responseDictionary in
             
                 guard let strongSelf = self else {
                     
@@ -30,8 +31,10 @@ class TopEntriesViewModel {
                         
                     return
                 }
-                
-                strongSelf.entries = children.map { dictionary in
+            
+                strongSelf.afterTag = data["after"] as? String
+            
+                let newEntries = children.map { dictionary -> EntryViewModel in
 
                     // Empty [String: AnyObject] dataDictionary will result in a non-nill EntryViewModel
                     // with hasErrors set to true.
@@ -42,7 +45,9 @@ class TopEntriesViewModel {
                     
                     return entryViewModel
                 }
-                
+            
+                strongSelf.entries.appendContentsOf(newEntries)
+            
                 strongSelf.hasError = false
                 strongSelf.errorMessage = nil
 

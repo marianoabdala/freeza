@@ -9,7 +9,7 @@ class ReditClientTests: XCTestCase {
         
         let expectation = expectationWithDescription("Wait for fetch to return.")
         
-        client.fetchTop(withCompletion: { (dictionary) in
+        client.fetchTop(after: nil, completionHandler: { (dictionary) in
             
                 guard let kind = dictionary["kind"] as? String else {
                     
@@ -31,7 +31,7 @@ class ReditClientTests: XCTestCase {
                     return
                 }
                 
-                XCTAssertEqual(children.count, 50) //Temporary, should match paging later.
+                XCTAssertEqual(children.count, 50)
                 
                 expectation.fulfill()
             

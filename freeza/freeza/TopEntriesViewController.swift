@@ -7,6 +7,8 @@ class TopEntriesViewController: UITableViewController {
     private let viewModel = TopEntriesViewModel(withClient: RedditClient())
     private let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     private let errorLabel = UILabel()
+    private let tableFooterView = UIView()
+    private let moreButton = UIButton(type: .System)
     private var urlToDisplay: NSURL?
 
     override func viewDidLoad() {
@@ -50,6 +52,12 @@ class TopEntriesViewController: UITableViewController {
         self.navigationController?.setToolbarHidden(true, animated: true)
     }
     
+    func moreButtonTapped() {
+        
+        self.moreButton.enabled = false
+        self.loadEntries()
+    }
+    
     private func loadEntries() {
 
         self.activityIndicatorView.startAnimating()
@@ -70,6 +78,15 @@ class TopEntriesViewController: UITableViewController {
             
             self.tableView.rowHeight = UITableViewAutomaticDimension
             self.tableView.estimatedRowHeight = 110.0
+
+            self.tableFooterView.frame = CGRectMake(0, 0, self.view.bounds.width, 80)
+            self.tableFooterView.addSubview(self.moreButton)
+            
+            self.moreButton.frame = self.tableFooterView.bounds
+            self.moreButton.setTitle("More...", forState: .Normal)
+            self.moreButton.setTitle("Loading...", forState: .Disabled)
+            self.moreButton.titleLabel?.font = UIFont.boldSystemFontOfSize(16)
+            self.moreButton.addTarget(self, action: #selector(TopEntriesViewController.moreButtonTapped), forControlEvents: .TouchUpInside)
         }
         
         func configureToolbar() {
@@ -101,6 +118,9 @@ class TopEntriesViewController: UITableViewController {
         
         self.activityIndicatorView.stopAnimating()
         self.tableView.reloadData()
+        
+        self.tableView.tableFooterView = self.tableFooterView
+        self.moreButton.enabled = true
         
         if self.viewModel.hasError {
 

@@ -12,7 +12,7 @@ class TopEntriesViewModelTests: XCTestCase {
         
         topEntriesViewModel.loadEntries {
             
-            XCTAssertEqual(topEntriesViewModel.entries.count, 50) //Temporary, should match paging later.
+            XCTAssertEqual(topEntriesViewModel.entries.count, 50)
             XCTAssertFalse(topEntriesViewModel.hasError)
             
             topEntriesViewModel.entries.forEach { entryViewModel in
@@ -48,7 +48,7 @@ class TestErrorClient: Client {
     
     static let testErrorMessage = "TEST_ERROR"
     
-    func fetchTop(withCompletion completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
+    func fetchTop(after afterTag: String?, completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
         
         errorHandler(message: TestErrorClient.testErrorMessage)
     }

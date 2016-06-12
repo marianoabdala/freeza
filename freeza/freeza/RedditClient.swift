@@ -7,12 +7,18 @@ class RedditClient: Client {
     /**
      Fetches the top links from Reddit.
      
+     - parameter after:             Tag to be sent to the server to return the next page.
      - parameter completionHandler: Returns dictionary. Returning in main thread is not guaranteed.
      - parameter errorHandler:      Returns error message.
      */
-    func fetchTop(withCompletion completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
+    func fetchTop(after afterTag: String?, completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
         
-        let requestURLString = "https://www.reddit.com/top.json?limit=50"
+        var requestURLString = "https://www.reddit.com/top.json?limit=50"
+        
+        if let afterTag = afterTag {
+            
+            requestURLString.appendContentsOf("&after=\(afterTag)")
+        }
         
         guard let requestURL = NSURL(string: requestURLString) else {
             
