@@ -30,7 +30,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXD-aI-wb0">
-                                            <rect key="frame" x="106" y="8" width="423" height="24"/>
+                                            <rect key="frame" x="106" y="8" width="438" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="ByU-IX-ERC"/>
                                             </constraints>
@@ -48,12 +48,12 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNH-q5-Qjw">
-                                            <rect key="frame" x="537" y="8" width="55" height="24"/>
+                                            <rect key="frame" x="548" y="10" width="44" height="20"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="M9H-Lr-x1s"/>
+                                                <constraint firstAttribute="height" constant="20" id="M9H-Lr-x1s"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -80,7 +80,7 @@
                                         <constraint firstItem="4kO-7S-4fe" firstAttribute="leading" secondItem="qYg-we-90s" secondAttribute="leadingMargin" id="Xfj-aJ-TmR"/>
                                         <constraint firstItem="LXD-aI-wb0" firstAttribute="leading" secondItem="4kO-7S-4fe" secondAttribute="trailing" constant="8" id="arv-Hg-qLE"/>
                                         <constraint firstItem="LXD-aI-wb0" firstAttribute="top" secondItem="4kO-7S-4fe" secondAttribute="top" id="lhI-Yc-1tN"/>
-                                        <constraint firstItem="qNH-q5-Qjw" firstAttribute="leading" secondItem="LXD-aI-wb0" secondAttribute="trailing" constant="8" id="n6N-gM-wRl"/>
+                                        <constraint firstItem="qNH-q5-Qjw" firstAttribute="leading" secondItem="LXD-aI-wb0" secondAttribute="trailing" constant="4" id="n6N-gM-wRl"/>
                                         <constraint firstItem="qNH-q5-Qjw" firstAttribute="trailing" secondItem="qYg-we-90s" secondAttribute="trailingMargin" id="p6l-01-fMF"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="yrj-32-1Xg" secondAttribute="trailing" id="pyC-aE-jjO"/>
                                         <constraint firstItem="ZK0-mz-4hc" firstAttribute="top" secondItem="4kO-7S-4fe" secondAttribute="bottom" constant="8" id="v85-0u-jdn"/>
