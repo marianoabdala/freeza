@@ -9,14 +9,13 @@ A few notes/considerations:
 - As a performance improvement, downloaded thumbnails should be stored in disk and fetched from the table view cells instead of stored in the cell’s view model. It uses too much memory this way. I judge it, again, out of the scope of this exercise.
 
 For the bonus points:
-* Saving pictures in the picture gallery
-
+* Saving pictures in the picture gallery  
 Since I’m explicitly asked not to implement IMGUR API I can’t obtain the image, thus, can’t save it to the _picture gallery_.
 
-* App state preservation/restoration
+* App state preservation/restoration  
 Would require a bit more effort than I’m ready to put into the exercise. Would require to store all model, view models, and state of the app. Some of those may become out of sync, specially paging… In short, too complex for the chosen architecture.
 
-* Support iPhone 6/ 6+ screen size (hint: size classes)
+* Support iPhone 6/ 6+ screen size (hint: size classes)  
 iPhone 6/ 6+ already supported with autolayout.
 
 
