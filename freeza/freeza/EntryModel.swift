@@ -32,7 +32,7 @@ struct EntryModel {
         
         self.title = dictionary["title"] as? String
         self.author = dictionary["author"] as? String
-        self.creation = dateFromDictionary(withAttributeName: "created")
+        self.creation = dateFromDictionary(withAttributeName: "created_utc")
         self.thumbnailURL = urlFromDictionary(withAttributeName: "thumbnail")
         self.commentsCount = dictionary["num_comments"] as? Int
     }

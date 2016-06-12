@@ -14,7 +14,7 @@ class RedditEntryModelTest: XCTestCase {
         let dictionary: [String: AnyObject] = [
             "title": title,
             "author": author,
-            "created": creation.timeIntervalSince1970,
+            "created_utc": creation.timeIntervalSince1970,
             "thumbnail": thumbnailURL.absoluteString,
             "num_comments": commentsCount
         ]
