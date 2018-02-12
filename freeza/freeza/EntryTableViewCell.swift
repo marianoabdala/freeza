@@ -2,7 +2,7 @@ import UIKit
 
 protocol EntryTableViewCellDelegate {
     
-    func presentImage(withURL url: NSURL)
+    func presentImage(withURL url: URL)
 }
 
 class EntryTableViewCell: UITableViewCell {
@@ -43,7 +43,7 @@ class EntryTableViewCell: UITableViewCell {
         
         func configureThumbnailImageView() {
         
-            self.thumbnailButton.layer.borderColor = UIColor.blackColor().CGColor
+            self.thumbnailButton.layer.borderColor = UIColor.black.cgColor
             self.thumbnailButton.layer.borderWidth = 1
         }
         
@@ -63,7 +63,7 @@ class EntryTableViewCell: UITableViewCell {
             return
         }
         
-        self.thumbnailButton.setImage(entry.thumbnail, forState: .Normal)
+        self.thumbnailButton.setImage(entry.thumbnail, for: [])
         self.authorLabel.text = entry.author
         self.commentsCountLabel.text = entry.commentsCount
         self.ageLabel.text = entry.age
@@ -71,7 +71,7 @@ class EntryTableViewCell: UITableViewCell {
         
         entry.loadThumbnail { [weak self] in
             
-            self?.thumbnailButton.setImage(entry.thumbnail, forState: .Normal)
+            self?.thumbnailButton.setImage(entry.thumbnail, for: [])
         }
     }
 }

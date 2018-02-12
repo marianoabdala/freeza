@@ -2,5 +2,5 @@ import Foundation
 
 protocol Client {
     
-    func fetchTop(after afterTag: String?, completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ())
+    func fetchTop(after afterTag: String?, completionHandler: @escaping ([String: AnyObject]) -> (), errorHandler: @escaping (_ message: String) -> ())
 }

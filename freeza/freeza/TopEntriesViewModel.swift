@@ -14,7 +14,7 @@ class TopEntriesViewModel {
         self.client = client
     }
     
-    func loadEntries(withCompletion completionHandler:() -> ()) {
+    func loadEntries(withCompletion completionHandler: @escaping () -> ()) {
         
         self.client.fetchTop(after: self.afterTag, completionHandler: { [weak self] responseDictionary in
             
@@ -24,7 +24,7 @@ class TopEntriesViewModel {
                 }
             
                 guard let data = responseDictionary["data"] as? [String: AnyObject],
-                    children = data["children"] as? [[String:AnyObject]] else {
+                    let children = data["children"] as? [[String:AnyObject]] else {
                     
                     strongSelf.hasError = true
                     strongSelf.errorMessage = "Invalid responseDictionary."
@@ -46,12 +46,12 @@ class TopEntriesViewModel {
                     return entryViewModel
                 }
             
-                strongSelf.entries.appendContentsOf(newEntries)
+            strongSelf.entries.append(contentsOf: newEntries)
             
                 strongSelf.hasError = false
                 strongSelf.errorMessage = nil
 
-                dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async() {
                     
                     completionHandler()
                 }
@@ -66,7 +66,7 @@ class TopEntriesViewModel {
                 strongSelf.hasError = true
                 strongSelf.errorMessage = message
                 
-                dispatch_async(dispatch_get_main_queue()) {
+                DispatchQueue.main.async() {
                     
                     completionHandler()
                 }

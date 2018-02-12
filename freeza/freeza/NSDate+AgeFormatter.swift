@@ -1,10 +1,10 @@
 import Foundation
 
-extension NSDate {
+extension Date {
     
-    func age(sinceDate presentDate: NSDate = NSDate()) -> String {
+    func age(sinceDate presentDate: Date = Date()) -> String {
         
-        let secondsAgo = Int(presentDate.timeIntervalSinceDate(self))
+        let secondsAgo = Int(presentDate.timeIntervalSince(self))
         
         if secondsAgo < 0 {
             

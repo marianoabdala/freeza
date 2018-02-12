@@ -2,7 +2,7 @@ import Foundation
 
 class RedditClient: Client {
     
-    private let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    private let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
 
     /**
      Fetches the top links from Reddit.
@@ -11,39 +11,39 @@ class RedditClient: Client {
      - parameter completionHandler: Returns dictionary. Returning in main thread is not guaranteed.
      - parameter errorHandler:      Returns error message.
      */
-    func fetchTop(after afterTag: String?, completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
+    func fetchTop(after afterTag: String?, completionHandler: @escaping ([String: AnyObject]) -> (), errorHandler: @escaping (_ message: String) -> ()) {
         
         var requestURLString = "https://www.reddit.com/top.json?limit=50"
         
         if let afterTag = afterTag {
             
-            requestURLString.appendContentsOf("&after=\(afterTag)")
+            requestURLString.append("&after=\(afterTag)")
         }
         
-        guard let requestURL = NSURL(string: requestURLString) else {
+        guard let requestURL = URL(string: requestURLString) else {
             
-            errorHandler(message: "An error occurred formatting the fetch URL: \(requestURLString)")
+            errorHandler("An error occurred formatting the fetch URL: \(requestURLString)")
             return
         }
         
-        let request = NSURLRequest(URL: requestURL)
+        let request = URLRequest(url: requestURL)
         
-        self.fetch(request, completionHandler: completionHandler, errorHandler: errorHandler)
+        self.fetch(request: request, completionHandler: completionHandler, errorHandler: errorHandler)
     }
     
-    private func fetch(request: NSURLRequest, completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
+    private func fetch(request: URLRequest, completionHandler:@escaping ([String: AnyObject]) -> (), errorHandler: @escaping (_ message: String) -> ()) {
         
-        let dataTask = defaultSession.dataTaskWithRequest(request) { (data, response, error) in
+        let dataTask = defaultSession.dataTask(with: request) { (data, response, error) in
             
             guard let _ = response else {
                 
-                errorHandler(message: "Please check your internet connection. Server may be down.")
+                errorHandler("Please check your internet connection. Server may be down.")
                 return
             }
             
-            guard let httpResponse = response as? NSHTTPURLResponse else {
+            guard let httpResponse = response as? HTTPURLResponse else {
                 
-                errorHandler(message: "Invalid server response type.")
+                errorHandler("Invalid server response type.")
                 return
             }
             
@@ -51,21 +51,21 @@ class RedditClient: Client {
             
             guard statusCode == 200 else {
                 
-                errorHandler(message: "Invalid response code: \(statusCode)")
+                errorHandler("Invalid response code: \(statusCode)")
                 return
             }
             
             guard let data = data else {
                 
-                errorHandler(message: "Invalid response Data (empty).")
+                errorHandler("Invalid response Data (empty).")
                 return
             }
             
             do {
                 
-                guard let dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String: AnyObject] else {
+                guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: AnyObject] else {
                     
-                    errorHandler(message: "An error occurrred parsing the response.")
+                    errorHandler("An error occurrred parsing the response.")
                     return
                 }
                 
@@ -73,7 +73,7 @@ class RedditClient: Client {
                 
             } catch {
                 
-                errorHandler(message: "An error occurrred parsing the response.")
+                errorHandler("An error occurrred parsing the response.")
             }
             
         }

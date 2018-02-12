@@ -24,10 +24,10 @@ class EntryViewModel {
     
     var thumbnail: UIImage
     let commentsCount: String
-    let imageURL: NSURL?
+    let imageURL: URL?
     
-    private let creation: NSDate?
-    private let thumbnailURL: NSURL?
+    private let creation: Date?
+    private let thumbnailURL: URL?
     private var thumbnailFetched = false
 
     init(withModel model: EntryModel) {
@@ -55,19 +55,19 @@ class EntryViewModel {
         }
     }
     
-    func loadThumbnail(withCompletion completion: () -> ()) {
+    func loadThumbnail(withCompletion completion: @escaping () -> ()) {
 
-        guard let url = self.thumbnailURL where self.thumbnailFetched == false else {
+        guard let url = self.thumbnailURL, self.thumbnailFetched == false else {
             
             return
         }
         
-        let downloadThumbnailTask = NSURLSession.sharedSession().downloadTaskWithURL(url) { [weak self] (url, urlResponse, error) in
+        let downloadThumbnailTask = URLSession.shared.downloadTask(with: url) { [weak self] (url, urlResponse, error) in
 
             guard let strongSelf = self,
-                url = url,
-                data = NSData(contentsOfURL: url),
-                image = UIImage(data: data) else {
+                let url = url,
+                let data = try? Data(contentsOf: url),
+                let image = UIImage(data: data) else {
                 
                 return
             }
@@ -75,7 +75,7 @@ class EntryViewModel {
             strongSelf.thumbnail = image
             strongSelf.thumbnailFetched = true
             
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 
                 completion()
             }

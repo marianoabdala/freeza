@@ -4,31 +4,31 @@ struct EntryModel {
 
     let title: String?
     let author: String?
-    let creation: NSDate?
-    let thumbnailURL: NSURL?
+    let creation: Date?
+    let thumbnailURL: URL?
     let commentsCount: Int?
-    let imageURL: NSURL?
+    let imageURL: URL?
     
     init(withDictionary dictionary: [String: AnyObject]) {
         
-        func dateFromDictionary(withAttributeName attribute: String) -> NSDate? {
+        func dateFromDictionary(withAttributeName attribute: String) -> Date? {
             
             guard let rawDate = dictionary[attribute] as? Double else {
                 
                 return nil
             }
             
-            return NSDate(timeIntervalSince1970: rawDate)
+            return Date(timeIntervalSince1970: rawDate)
         }
         
-        func urlFromDictionary(withAttributeName attribute: String) -> NSURL? {
+        func urlFromDictionary(withAttributeName attribute: String) -> URL? {
             
             guard let rawURL = dictionary[attribute] as? String else {
                 
                 return nil
             }
             
-            return NSURL(string: rawURL)
+            return URL(string: rawURL)
         }
         
         self.title = dictionary["title"] as? String
@@ -38,7 +38,7 @@ struct EntryModel {
         self.commentsCount = dictionary["num_comments"] as? Int
         
         if let media = dictionary["media"] as? [String: AnyObject],
-            type = media["type"] as? String where type == "i.imgur.com" {
+            let type = media["type"] as? String, type == "i.imgur.com" {
                 
             self.imageURL = nil
             

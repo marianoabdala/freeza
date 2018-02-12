@@ -3,11 +3,11 @@ import UIKit
 
 class URLViewController: UIViewController {
     
-    var url: NSURL?
+    var url: URL?
     
     @IBOutlet private weak var webView: UIWebView!
     
-    private let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    fileprivate let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
 
     override func viewDidLoad() {
         
@@ -18,14 +18,14 @@ class URLViewController: UIViewController {
 
         if let url = url {
         
-            self.webView.loadRequest(NSURLRequest(URL: url))
+            self.webView.loadRequest(URLRequest(url: url))
         }
     }
 }
 
 extension URLViewController: UIWebViewDelegate {
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
 
         self.activityIndicatorView.stopAnimating()
     }
