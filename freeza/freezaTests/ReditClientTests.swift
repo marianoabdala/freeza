@@ -7,7 +7,7 @@ class ReditClientTests: XCTestCase {
         
         let client = RedditClient()
         
-        let expectation = expectationWithDescription("Wait for fetch to return.")
+        let waitExpectation = expectation(description: "Wait for fetch to return.")
         
         client.fetchTop(after: nil, completionHandler: { (dictionary) in
             
@@ -33,13 +33,13 @@ class ReditClientTests: XCTestCase {
                 
                 XCTAssertEqual(children.count, 50)
                 
-                expectation.fulfill()
+                waitExpectation.fulfill()
             
             }, errorHandler: { (message) in
                 
                 XCTFail()
         })
         
-        waitForExpectationsWithTimeout(60, handler: nil)
+        waitForExpectations(timeout: 60, handler: nil)
     }
 }

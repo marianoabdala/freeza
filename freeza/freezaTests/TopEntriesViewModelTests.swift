@@ -8,7 +8,7 @@ class TopEntriesViewModelTests: XCTestCase {
         let client = RedditClient()
         let topEntriesViewModel = TopEntriesViewModel(withClient: client)
         
-        let expectation = expectationWithDescription("Wait for loadEntries to complete.")
+        let waitExpectation = expectation(description: "Wait for loadEntries to complete.")
         
         topEntriesViewModel.loadEntries {
             
@@ -20,10 +20,10 @@ class TopEntriesViewModelTests: XCTestCase {
                 XCTAssertFalse(entryViewModel.hasError)
             }
             
-            expectation.fulfill()
+            waitExpectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(60, handler: nil)
+        waitForExpectations(timeout: 60, handler: nil)
     }
     
     func testError() {
@@ -31,25 +31,25 @@ class TopEntriesViewModelTests: XCTestCase {
         let client = TestErrorClient()
         let topEntriesViewModel = TopEntriesViewModel(withClient: client)
         
-        let expectation = expectationWithDescription("Wait for loadEntries to complete.")
+        let waitExpectation = expectation(description: "Wait for loadEntries to complete.")
         
         topEntriesViewModel.loadEntries {
             
             XCTAssertTrue(topEntriesViewModel.hasError)
             XCTAssertEqual(topEntriesViewModel.errorMessage, TestErrorClient.testErrorMessage)
-            expectation.fulfill()
+            waitExpectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(60, handler: nil)
+        waitForExpectations(timeout: 60, handler: nil)
     }
 }
 
 class TestErrorClient: Client {
     
     static let testErrorMessage = "TEST_ERROR"
-    
-    func fetchTop(after afterTag: String?, completionHandler:([String: AnyObject]) -> (), errorHandler:(message: String) -> ()) {
+
+    func fetchTop(after afterTag: String?, completionHandler: @escaping ([String : AnyObject]) -> (), errorHandler: @escaping (String) -> ()) {
         
-        errorHandler(message: TestErrorClient.testErrorMessage)
+        errorHandler(TestErrorClient.testErrorMessage)
     }
 }

@@ -8,15 +8,15 @@ class RedditEntryModelTest: XCTestCase {
         let title = "TEST_TITLE"
         let author = "TEST_AUTHOR"
         let creation = NSDate()
-        let thumbnailURL = NSURL(string: "http://mysite.com/thumb.jpg")!
+        let thumbnailURL = URL(string: "http://mysite.com/thumb.jpg")!
         let commentsCount = 200
         
         let dictionary: [String: AnyObject] = [
-            "title": title,
-            "author": author,
-            "created_utc": creation.timeIntervalSince1970,
-            "thumbnail": thumbnailURL.absoluteString,
-            "num_comments": commentsCount
+            "title": title as AnyObject,
+            "author": author as AnyObject,
+            "created_utc": creation.timeIntervalSince1970 as AnyObject,
+            "thumbnail": thumbnailURL.absoluteString as AnyObject,
+            "num_comments": commentsCount as AnyObject
         ]
         
         let entryModel = EntryModel(withDictionary: dictionary)

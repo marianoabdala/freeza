@@ -41,18 +41,18 @@ class TopEntriesViewController: UITableViewController {
         }
     }
 
-    func retryFromErrorToolbar() {
+    @objc func retryFromErrorToolbar() {
         
         self.loadEntries()
         self.dismissErrorToolbar()
     }
     
-    func dismissErrorToolbar() {
+    @objc func dismissErrorToolbar() {
         
         self.navigationController?.setToolbarHidden(true, animated: true)
     }
     
-    func moreButtonTapped() {
+    @objc func moreButtonTapped() {
         
         self.moreButton.isEnabled = false
         self.loadEntries()
