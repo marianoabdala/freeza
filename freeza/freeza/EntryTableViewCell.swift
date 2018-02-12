@@ -31,7 +31,7 @@ class EntryTableViewCell: UITableViewCell {
         self.configureViews()
     }
     
-    @IBAction func thumbnailButtonTapped(sender: AnyObject) {
+    @IBAction func thumbnailButtonTapped(_ sender: AnyObject) {
         
         if let imageURL = self.entry?.imageURL {
             
