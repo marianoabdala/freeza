@@ -24,7 +24,7 @@ class EntryViewModel {
     
     var thumbnail: UIImage
     let commentsCount: String
-    let imageURL: URL?
+    let url: URL?
     
     private let creation: Date?
     private let thumbnailURL: URL?
@@ -44,7 +44,7 @@ class EntryViewModel {
         self.thumbnail = UIImage(named: "thumbnail-placeholder")!
         self.commentsCount = " \(model.commentsCount ?? 0) " // Leave space for the rounded corner. I know, not cool, but does the trick.
         self.creation = model.creation
-        self.imageURL = model.imageURL
+        self.url = model.url
 
         if model.title == nil ||
             model.author == nil ||
@@ -57,12 +57,12 @@ class EntryViewModel {
     
     func loadThumbnail(withCompletion completion: @escaping () -> ()) {
 
-        guard let url = self.thumbnailURL, self.thumbnailFetched == false else {
+        guard let thumbnailURL = self.thumbnailURL, self.thumbnailFetched == false else {
             
             return
         }
         
-        let downloadThumbnailTask = URLSession.shared.downloadTask(with: url) { [weak self] (url, urlResponse, error) in
+        let downloadThumbnailTask = URLSession.shared.downloadTask(with: thumbnailURL) { [weak self] (url, urlResponse, error) in
 
             guard let strongSelf = self,
                 let url = url,

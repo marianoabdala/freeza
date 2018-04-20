@@ -33,9 +33,9 @@ class EntryTableViewCell: UITableViewCell {
     
     @IBAction func thumbnailButtonTapped(_ sender: AnyObject) {
         
-        if let imageURL = self.entry?.imageURL {
+        if let url = self.entry?.url {
             
-            self.delegate?.presentImage(withURL: imageURL)
+            self.delegate?.presentImage(withURL: url)
         }
     }
     
